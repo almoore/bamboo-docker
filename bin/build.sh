@@ -11,6 +11,8 @@ error_exit(){
 [ -n "${bamboo_DOCKER_HOST}" ] || error_exit "bamboo_DOCKER_HOST required"
 [ -n "${IMAGE_NAME}" ] || error_exit "IMAGE_NAME required"
 
+echo "TEST SCRIPT AUTO DEPLOY"
+
 docker --host ${bamboo_DOCKER_HOST} login \
   --email ${bamboo_DOCKERHUB_EMAIL} \
   --username ${bamboo_DOCKERHUB_USERNAME} \
