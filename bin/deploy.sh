@@ -18,6 +18,9 @@ _get_image_name() {
 [ -n "${bamboo_CONTAINER_PORT}" ] || error_exit "bamboo_CONTAINER_PORT is required"
 [ -n "${bamboo_APP_ENV}" ] || error_exit "bamboo_APP_ENV is required"
 [ -n "${bamboo_DOCKER_HOST}" ] || error_exit "bamboo_DOCKER_HOST is required"
+[ -n "${bamboo_DOCKERHUB_EMAIL}" ] || error_exit "bamboo_DOCKERHUB_EMAIL is required"
+[ -n "${bamboo_DOCKERHUB_USERNAME}" ] || error_exit "bamboo_DOCKERHUB_USERNAME is required"
+[ -n "${bamboo_DOCKERHUB_PASSWORD}" ] || error_exit "bamboo_DOCKERHUB_PASSWORD is required"
 
 export DOCKER_HOST=${bamboo_DOCKER_HOST}
 
