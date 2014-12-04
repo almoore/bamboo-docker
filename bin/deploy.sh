@@ -21,6 +21,12 @@ _get_image_name() {
 
 export DOCKER_HOST=${bamboo_DOCKER_HOST}
 
+docker login \
+  --email ${bamboo_DOCKERHUB_EMAIL} \
+  --username ${bamboo_DOCKERHUB_USERNAME} \
+  --password ${bamboo_DOCKERHUB_PASSWORD} || \
+  error_exit "Failed to login to DockerHub"
+
 for container_id in $(_container_ids)
 do
   filtered_image_name=$(echo ${DOCKER_IMAGE} | sed -e 's/:.*$//')
