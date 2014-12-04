@@ -24,6 +24,10 @@ _get_image_name() {
 
 export DOCKER_HOST=${bamboo_DOCKER_HOST}
 
+echo email ${bamboo_DOCKERHUB_EMAIL}
+echo password ${bamboo_DOCKERHUB_PASSWORD}
+echo username ${bamboo_DOCKERHUB_USERNAME}
+
 docker login \
   --email ${bamboo_DOCKERHUB_EMAIL} \
   --username ${bamboo_DOCKERHUB_USERNAME} \
