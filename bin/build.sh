@@ -37,3 +37,5 @@ docker --tlsverify \
   --host ${bamboo_DOCKER_BUILDER} \
   push ${IMAGE_NAME} || \
   error_exit "Unable to push image to DockerHub"
+
+docker logout

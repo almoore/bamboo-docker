@@ -45,3 +45,5 @@ docker run --detach \
   --env "CATALINA_OPTS='-Dgrails.env=${bamboo_APP_ENV}'" \
   --env "JAVA_OPTS=-Xmx512m -XX:MaxPermSize=256m" \
   ${DOCKER_IMAGE} || error_exit "Failed to start container"
+
+docker logout
