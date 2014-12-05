@@ -33,6 +33,7 @@ done
 
 docker run --detach \
   --publish ${bamboo_HOST_PORT}:${bamboo_CONTAINER_PORT} \
+  --env "APP_ENV=${babmoo_APP_ENV}" \
   --env "CATALINA_OPTS='-Dgrails.env=${bamboo_APP_ENV}'" \
   --env "JAVA_OPTS=-Xmx512m -XX:MaxPermSize=256m" \
   ${DOCKER_IMAGE} || error_exit "Failed to start container"
